@@ -1,3 +1,98 @@
-/* Your Styles Here */
-body{
+body {
+    font-family: 'Courier New', monospace;
+    font-weight: 600;
+    font-size: 21px;
+    background-color: #82b1de;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.card {
+    position: relative;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    width: 80%;
+    max-width: 800px;
+    margin: auto;
+    box-shadow: 3px 3px 3px black;
+    overflow: hidden;
+}
+
+#profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+    margin-bottom: 20px;
+    border: 3px solid black;
+    position: relative;
+    z-index: 2;
+}
+
+.ice-cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('images/ice.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.95;
+    z-index: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.card.hovered .ice-cover {
+    opacity: 0;
+}
+
+.card.frozen .ice-cover {
+    display: none;
+}
+
+audio {
+    visibility: hidden;
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+.caption {
+    text-align: center;
+}
+
+/* This was found at https://www.w3schools.com/howto/howto_css_shake_image.asp */
+@keyframes shake {
+    0% { transform: translateY(0px); }
+    10% { transform: translateY(-10px); }
+    20% { transform: translateY(8px); }
+    30% { transform: translateY(-8px); }
+    40% { transform: translateY(6px); }
+    50% { transform: translateY(-6px); }
+    60% { transform: translateY(4px); }
+    70% { transform: translateY(-4px); }
+    80% { transform: translateY(2px); }
+    90% { transform: translateY(-2px); }
+    100% { transform: translateY(0px); }
+}
+
+.shake {
+    animation: shake 1s ease-in-out;
+    animation-iteration-count: 1;
 }
